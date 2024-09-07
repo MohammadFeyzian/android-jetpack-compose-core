@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "android-jetpack-compose-review-1"
+rootProject.name = "android-jetpack-compose-core"
 include(":app")
