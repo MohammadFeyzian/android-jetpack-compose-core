@@ -1,4 +1,4 @@
-package com.faydenai.jetpack_compose_review
+package com.faydenai.jetpack_compose_core
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.faydenai.jetpack_compose_review.ui.theme
+package com.faydenai.jetpack_compose_core.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

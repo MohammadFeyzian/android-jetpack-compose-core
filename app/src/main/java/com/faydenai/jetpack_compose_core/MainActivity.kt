@@ -1,4 +1,4 @@
-package com.faydenai.jetpack_compose_review
+package com.faydenai.jetpack_compose_core
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.faydenai.jetpack_compose_review.ui.theme.JetpackComposeReviewTheme
+import com.faydenai.jetpack_compose_core.ui.theme.JetpackComposeReviewTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

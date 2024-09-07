@@ -1,4 +1,4 @@
-package com.faydenai.jetpack_compose_review.ui.theme
+package com.faydenai.jetpack_compose_core.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
