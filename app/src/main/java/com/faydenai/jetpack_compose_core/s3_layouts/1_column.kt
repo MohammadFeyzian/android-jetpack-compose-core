@@ -89,7 +89,7 @@ fun ComplexColumnExample() {
         )
 
         Image(
-            painter = painterResource(id = R.drawable.ic_launcher_foreground),  // Replace with your drawable
+            painter = painterResource(id = R.drawable.sample_image),  // Replace with your drawable
             contentDescription = "Sample Image",
             modifier = Modifier
                 .size(100.dp)
