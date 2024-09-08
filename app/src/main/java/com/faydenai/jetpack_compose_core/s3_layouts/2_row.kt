@@ -89,7 +89,7 @@ fun ComplexRowExample() {
 
         Column(
             modifier = Modifier
-                .weight(1f)
+                .weight(1f) // Related to the RowScope
                 .padding(end = 16.dp),
             verticalArrangement = Arrangement.Center
         ) {
