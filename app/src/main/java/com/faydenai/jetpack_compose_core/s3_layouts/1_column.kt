@@ -2,6 +2,8 @@ package com.faydenai.jetpack_compose_core.s3_layouts
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -58,11 +60,40 @@ fun SimpleColumnExample() {
     }
 }
 
+@Composable
+fun SimpleScrollableColumnExample() {
+
+    val scrollState = rememberScrollState()
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(scrollState)
+            .padding(16.dp)
+    ) {
+        (1..50).map { "Item $it" }
+            .forEach { item ->
+                Text(
+                    text = item,
+                    modifier = Modifier.padding(8.dp),
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            }
+    }
+}
+
 // Preview for simple example
 @Preview(showBackground = true)
 @Composable
 fun PreviewSimpleColumnExample() {
     SimpleColumnExample()
+}
+
+// Preview for simple example
+@Preview(showBackground = true)
+@Composable
+fun PreviewSimpleScrollableColumnExample() {
+    SimpleScrollableColumnExample()
 }
 
 /**

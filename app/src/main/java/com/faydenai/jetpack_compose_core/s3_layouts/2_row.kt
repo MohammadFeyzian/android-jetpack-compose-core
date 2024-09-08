@@ -1,9 +1,12 @@
 package com.faydenai.jetpack_compose_core.s3_layouts
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -11,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.faydenai.jetpack_compose_review.R
+import kotlinx.coroutines.launch
 
 /**
  * Jetpack Compose: Basic Layout Structures - Row
@@ -54,11 +58,57 @@ fun SimpleRowExample() {
     }
 }
 
+@Composable
+fun SimpleScrollableRowExample() {
+
+    val scrollableState = rememberScrollState()
+    val coroutineScope = rememberCoroutineScope()
+
+    Column(
+        modifier = Modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(scrollableState)
+        ) {
+
+            (1..50).map { "Item $it" }
+                .forEach { item ->
+                    Text(
+                        text = item,
+                        modifier = Modifier.padding(8.dp),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                }
+        }
+
+        Button(
+            onClick = {
+                coroutineScope.launch {
+                    scrollableState.animateScrollTo(0)
+                }
+            },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(text = "Back to Start")
+        }
+    }
+}
+
 // Preview for simple example
 @Preview(showBackground = true)
 @Composable
 fun PreviewSimpleRowExample() {
     SimpleRowExample()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewSimpleScrollableRowExample() {
+    SimpleScrollableRowExample()
 }
 
 /**
