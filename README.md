@@ -12,7 +12,6 @@
 ### 3. Layout in Jetpack Compose
    - Basic layout structures: `Column`, `Row`, `Box`, `ConstraintLayout`.
    - Advanced layouts: `LazyColumn`, `LazyRow`, `LazyVerticalGrid`, `LazyHorizontalGrid`, `FlowRow`, `FlowColumn`.
-   - Modifier usage for padding, margin, alignment, etc.
 
 ### 4. Modifier
    - Basic: Padding, Alignment, Size, Background, FillMaxWidth/FillMaxHeight, Spacer
