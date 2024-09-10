@@ -86,10 +86,10 @@ fun PreviewSimpleLazyColumn() {
  *
  **/
 
-data class Person(val name: String, val age: Int)
-
 @Composable
 fun ComplexLazyColumn1() {
+
+    data class Person(val name: String, val age: Int)
 
     val itemsList = (1..100).map {
         Person(
@@ -134,6 +134,9 @@ fun PreviewComplexLazyColumn1() {
 
 @Composable
 fun ComplexLazyColumn2() {
+
+    data class Person(val name: String, val age: Int)
+
     val peopleList = listOf(
         Person("John", 30),
         Person("Emily", 25),
