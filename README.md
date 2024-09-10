@@ -14,4 +14,9 @@
    - Advanced layouts: `LazyColumn`, `LazyRow`, `LazyVerticalGrid`, `LazyHorizontalGrid`, `FlowRow`, `FlowColumn`.
    - Modifier usage for padding, margin, alignment, etc.
 
+### 4. Modifier
+   - Basic: Padding, Alignment, Size, Background, FillMaxWidth/FillMaxHeight, Spacer
+   - Intermediate: Clickable, Border, Clip, Offset, Shadow
+   - Advanced: GraphicsLayer, Rotate, Scale, ZIndex, AspectRatio
+
 In progress...
