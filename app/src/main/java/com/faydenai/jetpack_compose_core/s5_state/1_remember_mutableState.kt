@@ -67,7 +67,7 @@ fun PreviewToggleButtonExample() {
 @Composable
 fun CounterExample() {
     // State management for counter
-    var count by remember { mutableStateOf(0) }
+    var count by remember { mutableIntStateOf(0) }
 
     // UI: Display count and two buttons (Increment and Reset)
     Column(
