@@ -23,4 +23,10 @@
 - Unidirectional data flow.
 - `rememberSaveable` and surviving configuration changes.
 
+### 6. Recomposition and Optimization
+- How recomposition works.
+- Controlling recomposition and avoiding unnecessary UI updates.
+- Key best practices to ensure efficient recomposition.
+
+
 In progress...
