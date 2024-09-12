@@ -28,5 +28,10 @@
 - Controlling recomposition and avoiding unnecessary UI updates.
 - Key best practices to ensure efficient recomposition.
 
+### 7. UI Components
+- Text, Image, Icons, Scaffold, and more in Compose.
+- Handling input fields: TextField, Button, Checkbox, Slider, etc.
+- Animations: basic animations, transitions, and gestures.
+
 
 In progress...
