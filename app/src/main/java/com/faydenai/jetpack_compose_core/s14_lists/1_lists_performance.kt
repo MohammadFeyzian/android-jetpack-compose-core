@@ -1,4 +1,4 @@
-package com.faydenai.jetpack_compose_core.s13_lists
+package com.faydenai.jetpack_compose_core.s14_lists
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

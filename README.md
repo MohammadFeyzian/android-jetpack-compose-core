@@ -37,12 +37,12 @@
 - Using LaunchedEffect, SideEffect, DisposableEffect.
 - Side-effect handling and lifecycle-aware composables.
 
-### Jetpack Compose and ViewModel Integration
+### 13. Jetpack Compose and ViewModel Integration
 - Composing with ViewModel.
 - Using viewModel() in Jetpack Compose.
 - State and events between ViewModel and Composables.
 
-### Handling Lists and Performance
+### 14. Handling Lists and Performance
 - Using LazyColumn, LazyRow for large data sets.
 - Customizing list items, separators, and handling user interactions.
 - Understanding and optimizing scrolling performance.
