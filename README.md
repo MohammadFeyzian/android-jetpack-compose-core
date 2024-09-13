@@ -33,5 +33,9 @@
 - Handling input fields: TextField, Button, Checkbox, Slider, etc.
 - Animations: basic animations, transitions, and gestures.
 
+### 11. Side Effects in Jetpack Compose
+- Using LaunchedEffect, SideEffect, DisposableEffect.
+- Side-effect handling and lifecycle-aware composables.
+
 
 In progress...
