@@ -42,5 +42,10 @@
 - Using viewModel() in Jetpack Compose.
 - State and events between ViewModel and Composables.
 
+### Handling Lists and Performance
+- Using LazyColumn, LazyRow for large data sets.
+- Customizing list items, separators, and handling user interactions.
+- Understanding and optimizing scrolling performance.
+
 
 In progress...
