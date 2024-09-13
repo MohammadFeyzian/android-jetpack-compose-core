@@ -37,5 +37,10 @@
 - Using LaunchedEffect, SideEffect, DisposableEffect.
 - Side-effect handling and lifecycle-aware composables.
 
+### Jetpack Compose and ViewModel Integration
+- Composing with ViewModel.
+- Using viewModel() in Jetpack Compose.
+- State and events between ViewModel and Composables.
+
 
 In progress...
