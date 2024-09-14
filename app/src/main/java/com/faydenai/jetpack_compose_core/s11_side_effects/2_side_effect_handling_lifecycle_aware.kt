@@ -5,6 +5,7 @@ import androidx.compose.runtime.*
 import androidx.compose.material3.*
 import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 /**
  * Side-effect Handling and Lifecycle-aware Composables in Jetpack Compose:
@@ -135,6 +136,7 @@ fun ComplexLifecycleAwareExample() {
     var isActive by remember { mutableStateOf(true) }
     var taskStatus by remember { mutableStateOf("Waiting for task...") }
     val currentIsActive = rememberUpdatedState(isActive)
+    val coroutineScope = rememberCoroutineScope()
 
     // Launch a coroutine task that updates the status every 2 seconds while isActive is true
     LaunchedEffect(Unit) {
@@ -158,7 +160,12 @@ fun ComplexLifecycleAwareExample() {
     Column {
         Text("Task Status: $taskStatus")
 
-        Button(onClick = { isActive = !isActive }) {
+        Button(onClick = {
+            coroutineScope.launch {
+                // Perform a task
+            }
+            isActive = !isActive
+        }) {
             Text(if (isActive) "Stop Task" else "Start Task")
         }
     }
