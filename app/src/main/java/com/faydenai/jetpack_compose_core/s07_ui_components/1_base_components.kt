@@ -54,17 +54,24 @@ import com.faydenai.jetpack_compose_review.R
 
 @Composable
 fun BaseComponentExample() {
+
+    var currentTabIndex by remember { mutableIntStateOf(0) }
+
     Scaffold(
         topBar = { AppBar() },
         floatingActionButton = { FAB() },
-        bottomBar = { BottomNavigationBar() }
+        bottomBar = {
+            BottomNavigationBar(
+                currentTabIndex
+            ) { tabIndex -> currentTabIndex = tabIndex }
+        }
     ) { paddingValues ->
         Column(
             modifier = Modifier
                 .padding(paddingValues)
                 .fillMaxSize()
         ) {
-            ContentSection()
+            ContentSection(currentTabIndex = currentTabIndex)
         }
     }
 }
@@ -95,30 +102,44 @@ private fun FAB() {
 }
 
 @Composable
-private fun BottomNavigationBar() {
-    var selectedIndex by remember { mutableIntStateOf(0) }
+private fun BottomNavigationBar(
+    currentTabIndex: Int,
+    onTabChanged: (index: Int) -> Unit
+) {
 
     NavigationBar {
         NavigationBarItem(
             icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
-            selected = selectedIndex == 0,
-            onClick = { selectedIndex = 0 }
+            selected = currentTabIndex == 0,
+            onClick = { onTabChanged(0) }
         )
         NavigationBarItem(
             icon = { Icon(Icons.Default.Favorite, contentDescription = "Favorites") },
-            selected = selectedIndex == 1,
-            onClick = { selectedIndex = 1 }
+            selected = currentTabIndex == 1,
+            onClick = { onTabChanged(1) }
         )
         NavigationBarItem(
             icon = { Icon(Icons.Default.Settings, contentDescription = "Settings") },
-            selected = selectedIndex == 2,
-            onClick = { selectedIndex = 2 }
+            selected = currentTabIndex == 2,
+            onClick = { onTabChanged(2) }
         )
     }
 }
 
 @Composable
-private fun ContentSection() {
+private fun ContentSection(
+    currentTabIndex: Int
+) {
+    when (currentTabIndex){
+        0 -> FirstTabContent()
+        1 -> OtherTabsContent("Liked")
+        2 -> OtherTabsContent( "Settings")
+    }
+
+}
+
+@Composable
+private fun FirstTabContent(){
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
@@ -132,6 +153,19 @@ private fun ContentSection() {
         item { TabRowComponent() }
         item { HorizontalDivider() }
         item { BoxComponent() }
+    }
+}
+
+@Composable
+private fun OtherTabsContent(title: String) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = title,
+            style = MaterialTheme.typography.headlineLarge
+        )
     }
 }
 
